@@ -11,10 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/relation-check', function () {
     // return view('welcome');
     echo "<h1>Supply</h1>";
-
     $supply = App\Product::find(1)->supplier;
     echo "<pre>";
     echo $supply->first_name.' ';
@@ -22,7 +21,7 @@ Route::get('/', function () {
     echo $supply->address."<br>";
     echo $supply->phone."<br>";
     echo "</pre>";
-    // return view('welcome');
+
     echo "<h1>Category</h1>";
     $supply = App\Product::find(1)->category;
     echo "<pre>";
@@ -33,6 +32,28 @@ Route::get('/', function () {
 
 });
 
-Route::get('pos/', function () {
-    return view('pos/home/home');
+
+Route::get('/', function () {
+
+    return view('welcome');
 });
+
+
+
+Route::get('pos/', function () {
+
+    return view('pos/home/home');
+
+});
+
+
+
+/**
+ * Category Route Start
+ */
+
+Route::get('pos/create/category','CategoryController@create');
+
+/**
+ * Category Route End
+ */
