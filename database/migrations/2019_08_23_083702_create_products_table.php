@@ -13,6 +13,7 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
@@ -31,8 +32,11 @@ class CreateProductsTable extends Migration
             $table->string('method');
             $table->string('note');
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');;
-            $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');;
+        });
+
+        Schema::create('products', function (Blueprint $table) {
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
         });
     }
 
