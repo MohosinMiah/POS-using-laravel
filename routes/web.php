@@ -52,9 +52,13 @@ Route::get('pos/', function () {
  * Category Route Start
  */
 
+ Route::get('pos/category/list','CategoryController@index');
+
 Route::get('pos/create/category','CategoryController@create');
 
 Route::post('pos/save/category','CategoryController@store')->name('create_category');
+
+
 
 /**
  * Category Route End

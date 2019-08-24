@@ -14,6 +14,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
+{{-- For Data Table  --}}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
+
+
+
 <!-- Bootstrap Core CSS -->
 <link  href="{{ url('css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
 
@@ -136,12 +142,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			  <li class="treeview">
                 <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Components</span>
+                <span>Category</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="grids.html"><i class="fa fa-angle-right"></i> Grids</a></li>
-                  <li><a href="media.html"><i class="fa fa-angle-right"></i> Media Css</a></li>
+                  <li><a href={{ url('pos/category/list') }}><i class="fa fa-angle-right"></i> List Category</a></li>
+                <li><a href="{{ url('pos/create/category') }}"><i class="fa fa-angle-right"></i> New Category</a></li>
                 </ul>
               </li>
               <li class="treeview">
@@ -872,10 +878,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     </script>
 	<!-- //for index page weekly sales java script -->
 
+    {{-- for bootstrap font  --}}
+    {{-- <script src='https://kit.fontawesome.com/a076d05399.js'></script> --}}
 
 	<!-- Bootstrap Core JavaScript -->
    <script src="{{ url('js/bootstrap.js') }}"> </script>
 	<!-- //Bootstrap Core JavaScript -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
 </body>
 </html>
