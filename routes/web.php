@@ -42,7 +42,7 @@ Route::get('/', function () {
 
 Route::get('pos/', function () {
 
-    return view('pos/home/home');
+    return redirect('/');
 
 });
 
@@ -53,6 +53,8 @@ Route::get('pos/', function () {
  */
 
 Route::get('pos/create/category','CategoryController@create');
+
+Route::post('pos/save/category','CategoryController@store')->name('create_category');
 
 /**
  * Category Route End

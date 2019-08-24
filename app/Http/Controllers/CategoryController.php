@@ -35,7 +35,21 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(),[
+            //put fields to be validated here
+
+        ]);
+
+        $category = new Category();
+        $category->name= $request['name'];
+        $category->type= $request['type'];
+        $category->note= $request['note'];
+       // add other fields
+        $category->save();
+
+
+        return redirect('/');
+
     }
 
     /**
