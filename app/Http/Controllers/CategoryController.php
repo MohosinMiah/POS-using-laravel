@@ -95,9 +95,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category =  Category::find(1);
+        $category =  Category::find($id);
 
-        return view('pos/category/edit');
+        return view('pos/category/edit',compact('category'));
     }
 
     /**
@@ -107,9 +107,41 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $request, $id)
     {
-        //
+        /**
+         *  Data  Validation.....
+         */
+        $v = Validator::make($request->all(), [
+            'name' => 'required|max:100',
+            'type' => 'required',
+            'note' => 'required',
+
+        ]);
+
+        /**
+         * Check Data is Valid or Not
+         */
+        if ($v->fails()) {
+
+            \Session::flash('message', 'Fail To Save  Data.Please check error messages ....... ');
+            return redirect()->back()->withInput()->withErrors($v);
+
+        }else{
+
+            $category = Category::find($id);
+            $category->name= $request['name'];
+            $category->type= $request['type'];
+            $category->note= $request['note'];
+           // add other fields
+            $category->save();
+
+
+            \Session::flash('message', 'Data Update Successfully ....... ');
+
+              return redirect()->back();
+        }
+
     }
 
     /**

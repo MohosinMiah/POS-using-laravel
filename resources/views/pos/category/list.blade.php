@@ -37,7 +37,7 @@
                                 <td>{{ $category->created_at }}</td>
                                 <td>{{ $category->updated_at }}</td>
                                 <td>
-                                        <a href="#" title="EDIT"><i class='glyphicon glyphicon-edit' style='font-size:24px'></i></a>
+                                        <a href="{{route('edit_category',$category->id)}}" title="EDIT"><i class='glyphicon glyphicon-edit' style='font-size:24px'></i></a>
                                         <a href="#" title="VIEW"><i class="glyphicon glyphicon-search" style="font-size:24px"></i> </a>
                                         <a href="#" title="DELETE" onclick="return confirm('Are You Sure To Delete')"><i class='glyphicon glyphicon-trash' style='font-size:24px'></i></a>
                                     </td>
