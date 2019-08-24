@@ -11,7 +11,21 @@
 
 @section('content')
         <div class="row">
+
                 <div class="form-three widget-shadow">
+                      {{-- {{ --ShowErrorMessage-- }} --}}
+                     <div class="" style="text-align:center">
+                            @if (Session::has('message'))
+                            <h4 class="alert alert-info" role="alert">{!! session('message') !!}</h4>
+                    @endif
+                            @if ( count( $errors ) > 0 )
+                                    @foreach ($errors->all() as $error)
+                                <p class="alert alert-danger" >{{ $error }}</p>
+                                @endforeach
+                                @endif
+                     </div>
+                          {{-- {{ --ShowErrorMessage-- }} --}}
+
                     <form method="post" action="{{route('create_category')}}" class="form-horizontal" >
                          <?php
                         //  echo Form::open(array('action' => 'CategoryController@store'));
@@ -33,7 +47,7 @@
                                 <label for="txtarea1" class="col-sm-2 control-label">Category Type</label>
                                 <div class="col-sm-8">
 
-                                <input type="text"  name="type"  class="form-control1" id="focusedinput" placeholder="Category Type  ... ">
+                                <input type="text"  name="type"  class="form-control1" value="none" id="focusedinput" placeholder="Category Type  ... ">
                                 </div>
                             </div>
 
@@ -47,7 +61,7 @@
                                     <label for="txtarea1" class="col-sm-2 control-label">Category Note</label>
                                     <div class="col-sm-8">
 
-                                    <input type="text"  name="note"  class="form-control1" id="focusedinput" placeholder="Short Note  ... ">
+                                    <input type="text"  name="note"  class="form-control1" value="none"  id="focusedinput" placeholder="Short Note  ... ">
                                     </div>
                                 </div>
 

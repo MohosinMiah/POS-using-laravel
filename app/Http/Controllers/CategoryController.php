@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Auth;
+use Illuminate\View\View;
 
 class CategoryController extends Controller
 {
@@ -35,20 +38,39 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(request(),[
-            //put fields to be validated here
+        /**
+         *  Data  Validation.....
+         */
+        $v = Validator::make($request->all(), [
+            'name' => 'required|unique:categories|max:100',
+            'type' => 'required',
+            'note' => 'required',
 
         ]);
 
-        $category = new Category();
-        $category->name= $request['name'];
-        $category->type= $request['type'];
-        $category->note= $request['note'];
-       // add other fields
-        $category->save();
+        /**
+         * Check Data is Valid or Not
+         */
+        if ($v->fails()) {
+
+            \Session::flash('message', 'Fail To Save  Data.Please check error messages ....... ');
+            return redirect()->back()->withInput()->withErrors($v);
+
+        }else{
+
+            $category = new Category();
+            $category->name= $request['name'];
+            $category->type= $request['type'];
+            $category->note= $request['note'];
+           // add other fields
+            $category->save();
 
 
-        return redirect('/');
+            \Session::flash('message', 'Data Save Successfully ....... ');
+
+            return redirect('pos/create/category');
+        }
+
 
     }
 
