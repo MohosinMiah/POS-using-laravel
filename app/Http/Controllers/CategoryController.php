@@ -17,7 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        // $categories = Category::all();
+        $categories = Category::orderBy('id', 'desc')->get();
         return view('pos/category/list',compact('categories'));
     }
 
@@ -92,9 +93,11 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category =  Category::find(1);
+
+        return view('pos/category/edit');
     }
 
     /**

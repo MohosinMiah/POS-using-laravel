@@ -58,6 +58,8 @@ Route::get('pos/create/category','CategoryController@create');
 
 Route::post('pos/save/category','CategoryController@store')->name('create_category');
 
+Route::get('pos/edit/category/{id}','CategoryController@edit');
+
 
 
 /**
