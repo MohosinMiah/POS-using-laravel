@@ -52,7 +52,7 @@ Route::get('pos/', function () {
  * Category Route Start
  */
 
- Route::get('pos/category/list','CategoryController@index');
+ Route::get('pos/category/list','CategoryController@index')->name('category_index');
 
 Route::get('pos/create/category','CategoryController@create');
 
@@ -61,6 +61,10 @@ Route::post('pos/save/category','CategoryController@store')->name('create_catego
 Route::get('pos/edit/category/{id}','CategoryController@edit')->name('edit_category');
 
 Route::post('pos/update/category/{id}','CategoryController@update')->name('update_category');
+
+Route::get('pos/show/category/{id}','CategoryController@show')->name('show_category');
+
+Route::get('pos/delete/category/{id}','CategoryController@destroy')->name('destroy_category');
 
 
 

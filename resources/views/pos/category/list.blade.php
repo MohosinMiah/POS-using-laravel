@@ -11,7 +11,18 @@
 
 @section('content')
         <div class="row">
-
+          {{-- {{ --ShowErrorMessage-- }} --}}
+          <div class="" style="text-align:center">
+                @if (Session::has('message'))
+                <h4 class="alert alert-info" role="alert">{!! session('message') !!}</h4>
+        @endif
+                @if ( count( $errors ) > 0 )
+                        @foreach ($errors->all() as $error)
+                    <p class="alert alert-danger" >{{ $error }}</p>
+                    @endforeach
+                    @endif
+         </div>
+                      {{-- {{ --ShowErrorMessage-- }} --}}
                 <table id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -38,8 +49,8 @@
                                 <td>{{ $category->updated_at }}</td>
                                 <td>
                                         <a href="{{route('edit_category',$category->id)}}" title="EDIT"><i class='glyphicon glyphicon-edit' style='font-size:24px'></i></a>
-                                        <a href="#" title="VIEW"><i class="glyphicon glyphicon-search" style="font-size:24px"></i> </a>
-                                        <a href="#" title="DELETE" onclick="return confirm('Are You Sure To Delete')"><i class='glyphicon glyphicon-trash' style='font-size:24px'></i></a>
+                                        <a href="{{ route('show_category',$category->id) }}" title="VIEW"><i class="glyphicon glyphicon-search" style="font-size:24px"></i> </a>
+                                        <a href="{{ route('destroy_category',$category->id) }}" title="DELETE" onclick="return confirm('Are You Sure To Delete')"><i class='glyphicon glyphicon-trash' style='font-size:24px'></i></a>
                                     </td>
                             </tr>
                         <?php } ?>

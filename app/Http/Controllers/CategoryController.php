@@ -82,9 +82,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show($id)
     {
-        //
+       $category = Category::find($id);
+       return view('pos/category/view',compact('category'));
     }
 
     /**
@@ -150,8 +151,12 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->forceDelete();
+        \Session::flash('message', 'Data Delete Successfully ....... ');
+
+        return redirect()->back();
     }
 }
