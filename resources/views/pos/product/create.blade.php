@@ -26,7 +26,7 @@
                      </div>
                           {{-- {{ --ShowErrorMessage-- }} --}}
 
-                    <form method="post" action="{{route('create_product')}}" class="form-horizontal" >
+                    <form method="post" action="{{route('create_product')}}" class="form-horizontal" enctype="multipart/form-data">
                          <?php
                         //  echo Form::open(array('action' => 'CategoryController@store'));
                         echo Form::token();
@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <label for="focusedinput" class="col-sm-2 control-label">Product Name</label>
                             <div class="col-sm-8">
-                                <input type="text" name="p_name" class="form-control1" id="focusedinput" placeholder="Product Name ... ">
+                                <input type="text" name="name" class="form-control1" id="focusedinput" placeholder="Product Name ... ">
                             </div>
                             <div class="col-sm-2">
                             </div>
@@ -45,11 +45,15 @@
                         <div class="form-group">
                             <label for="selector1" class="col-sm-2 control-label">Product Category</label>
                             <div class="col-sm-8"><select name="p_category" id="selector1" class="form-control1">
-                                <option>Lorem ipsum dolor sit amet.</option>
-                                <option>Dolore, ab unde modi est!</option>
-                                <option>Illum, fuga minus sit eaque.</option>
-                                <option>Consequatur ducimus maiores voluptatum minima.</option>
-                            </select></div>
+                                <?php
+
+                                foreach ($categories as $category) {
+
+                                ?>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <?php   }  ?>
+                            </select>
+                        </div>
                         </div>
 
 
@@ -107,7 +111,7 @@
                             <label for="txtarea1" class="col-sm-2 control-label"> Image</label>
                             <div class="col-sm-8">
 
-                            <input type="file"  name="p_image"  class="form-control1">
+                            <input type="file"  name="img"  class="form-control1">
                             </div>
                         </div>
 
@@ -116,10 +120,14 @@
                         <div class="form-group">
                             <label for="selector1" class="col-sm-2 control-label"> Supplier</label>
                             <div class="col-sm-8"><select name="p_supplier" id="selector1" class="form-control1">
-                                <option>Lorem ipsum dolor sit amet.</option>
-                                <option>Dolore, ab unde modi est!</option>
-                                <option>Illum, fuga minus sit eaque.</option>
-                                <option>Consequatur ducimus maiores voluptatum minima.</option>
+                              <?php
+
+                                foreach ($categories as $category) {
+
+                                ?>
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <?php   }  ?>
+
                             </select></div>
                         </div>
 
@@ -161,6 +169,20 @@
                             <div class="col-sm-8">
 
                             <input type="text"  name="p_b_method"  class="form-control1" value="none"  id="focusedinput" placeholder="Buying Method  ... ">
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label for="txtarea1" class="col-sm-2 control-label"> Company</label>
+                            <div class="col-sm-8">
+
+                            <input type="text"  name="p_company"  class="form-control1" value="none"  id="focusedinput" placeholder="Buying Method  ... ">
                             </div>
                         </div>
 
