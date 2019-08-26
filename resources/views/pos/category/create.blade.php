@@ -67,13 +67,13 @@
 
 
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                         <label for="txtarea1" class="col-sm-2 control-label">Category Image</label>
                                         <div class="col-sm-8">
 
                                         <input type="file"  name="image"  class="form-control1">
                                         </div>
-                                    </div>
+                                    </div> --}}
 
 
 

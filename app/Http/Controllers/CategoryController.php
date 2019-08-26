@@ -70,7 +70,7 @@ class CategoryController extends Controller
 
             \Session::flash('message', 'Data Save Successfully ....... ');
 
-            return redirect('pos/create/category');
+            return redirect('create/category');
         }
 
 

@@ -146,8 +146,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href={{ url('pos/category/list') }}><i class="fa fa-angle-right"></i> List Category</a></li>
-                <li><a href="{{ url('pos/create/category') }}"><i class="fa fa-angle-right"></i> New Category</a></li>
+                  <li><a href={{ url('category/list') }}><i class="fa fa-angle-right"></i> List Category</a></li>
+                <li><a href="{{ url('create/category') }}"><i class="fa fa-angle-right"></i> New Category</a></li>
                 </ul>
               </li>
               <li class="treeview">
