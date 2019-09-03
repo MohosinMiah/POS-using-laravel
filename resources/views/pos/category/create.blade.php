@@ -27,6 +27,7 @@
                           {{-- {{ --ShowErrorMessage-- }} --}}
 
                     <form method="post" action="{{route('create_category')}}" class="form-horizontal" >
+
                          <?php
                         //  echo Form::open(array('action' => 'CategoryController@store'));
                         echo Form::token();

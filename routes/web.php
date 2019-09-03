@@ -77,19 +77,19 @@ Route::get('delete/category/{id}','CategoryController@destroy')->name('destroy_c
  * Product Route Start
  */
 
-// Route::get('category/list','CategoryController@index')->name('category_index');
+Route::get('product/list','ProductController@index')->name('product_index');
 
 Route::get('create/product','ProductController@create');
 
-Route::post('save/category','ProductController@store')->name('create_product');
+Route::post('save/product','ProductController@store')->name('create_product');
 
-// Route::get('edit/category/{id}','CategoryController@edit')->name('edit_category');
+Route::get('edit/product/{id}','ProductController@edit')->name('edit_product');
 
-// Route::post('update/category/{id}','CategoryController@update')->name('update_category');
+Route::post('update/product/{id}','ProductController@update')->name('update_product');
 
-// Route::get('show/category/{id}','CategoryController@show')->name('show_category');
+Route::get('show/product/{id}','ProductController@show')->name('show_product');
 
-// Route::get('delete/category/{id}','CategoryController@destroy')->name('destroy_category');
+Route::get('delete/product/{id}','ProductController@destroy')->name('destroy_product');
 
 
 
