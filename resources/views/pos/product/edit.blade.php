@@ -53,7 +53,7 @@
 
 
                                 ?>
-                                <option value="{{ $category->id }}" <?php if($category->id == $product->id){ echo "selected"; } ?> >{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" <?php if($category->id == $product->category_id){ ?> selected <?php  } ?> >{{ $category->name }}</option>
 
                                 <?php    } ?>
                             </select>
@@ -224,7 +224,7 @@
                                 <label for="largeinput" class="col-sm-2 control-label label-input-lg"></label>
 
                                 <div class="col-sm-8">
-                                    <input type="submit" value="Submit" class="form-control btn-primary" id="largeinput" >
+                                    <input type="submit" value="Update" class="form-control btn-primary" id="largeinput" >
                                 </div>
                                 </div>
                             </form>

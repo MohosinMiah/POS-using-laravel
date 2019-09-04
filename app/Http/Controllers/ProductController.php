@@ -167,9 +167,110 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
+ /**
+         *  Data  Validation.....
+         */
+        $v = Validator::make($request->all(), [
 
+            'name' => 'required|max:200',
+
+            'p_category' => 'required',
+
+            'p_r_price' => 'required',
+
+            'p_s_price' => 'required',
+
+            'p_qty' => 'required',
+
+            'p_unit' => 'required',
+
+
+            'p_supplier' => 'required',
+
+            'p_code' => 'required',
+
+            'p_weight' => 'required',
+
+            'p_tax' => 'required',
+
+            'p_b_method' => 'required',
+
+            'p_type' => 'required',
+
+            'p_note' => 'required',
+
+
+
+        ]);
+
+
+
+        /**
+         * Check Data is Valid or Not
+         */
+        if ($v->fails()) {
+
+            \Session::flash('message', ' Fail To Save  Data.Please check error messages ....... ');
+            return redirect()->back()->withInput()->withErrors($v);
+
+        }else{
+           /**
+         * Check File is uploaded or not
+         */
+        $img = $request->file('img');
+        if ($img) {
+        $img_name = time()."_".$img->getClientOriginalName();
+
+        $destinationPathOne = public_path('images');
+        $img->move($destinationPathOne, $img_name);
+    }
+
+    if ($img) {
+            $product = Product::find($id);
+            $product->name= $request['name'];
+            $product->category_id= $request['p_category'];
+            $product->price= $request['p_r_price'];
+            $product->sell_price= $request['p_s_price'];
+            $product->code= $request['p_code'];
+            $product->supplier_id= $request['p_supplier'];
+            $product->img = $img_name;
+            $product->unit= $request['p_unit'];
+            $product->weight= $request['p_weight'];
+            $product->quantity= $request['p_qty'];
+            $product->company= $request['p_company'];
+            $product->tax= $request['p_tax'];
+            $product->product_type= $request['p_type'];
+            $product->method= $request['p_b_method'];
+            $product->note= $request['p_note'];
+    }else{
+        $product = Product::find($id);
+        $product->name= $request['name'];
+        $product->category_id= $request['p_category'];
+        $product->price= $request['p_r_price'];
+        $product->sell_price= $request['p_s_price'];
+        $product->code= $request['p_code'];
+        $product->supplier_id= $request['p_supplier'];
+        $product->unit= $request['p_unit'];
+        $product->weight= $request['p_weight'];
+        $product->quantity= $request['p_qty'];
+        $product->company= $request['p_company'];
+        $product->tax= $request['p_tax'];
+        $product->product_type= $request['p_type'];
+        $product->method= $request['p_b_method'];
+        $product->note= $request['p_note'];
+    }
+
+           // add other fields
+
+            $product->save();
+
+
+            \Session::flash('message', 'Data Update Successfully ....... ');
+
+            return redirect()->back();
+        }
     }
 
     /**

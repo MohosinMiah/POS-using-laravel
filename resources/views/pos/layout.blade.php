@@ -140,17 +140,28 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 </a>
               </li>
 			  <li class="treeview">
-                <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Category</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href={{ url('category/list') }}><i class="fa fa-angle-right"></i> List Category</a></li>
-                <li><a href="{{ url('create/category') }}"><i class="fa fa-angle-right"></i> New Category</a></li>
-                </ul>
-              </li>
-              <li class="treeview">
+                    <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>Category</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href={{ url('category/list') }}><i class="fa fa-angle-right"></i> List Category</a></li>
+                    <li><a href="{{ url('create/category') }}"><i class="fa fa-angle-right"></i> New Category</a></li>
+                    </ul>
+                  </li>
+                  <li class="treeview">
+                        <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Supplier</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                          <li><a href={{ url('supplier/list') }}><i class="fa fa-angle-right"></i> List Supplier</a></li>
+                        <li><a href="{{ url('create/supplier') }}"><i class="fa fa-angle-right"></i> New Supplier</a></li>
+                        </ul>
+                      </li>
+             <li class="treeview">
                 <a href="#">
                 <i class="fa fa-laptop"></i>
                 <span>Product</span>
@@ -161,12 +172,17 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                 <li><a href="{{ url('create/product') }}"><i class="fa fa-angle-right"></i> New Product</a></li>
                 </ul>
               </li>
-			  <li>
-                <a href="widgets.html">
-                <i class="fa fa-th"></i> <span>Widgets</span>
-                <small class="label pull-right label-info">08</small>
-                </a>
-              </li>
+              <li class="treeview">
+                    <a href="#">
+                    <i class="fa fa-laptop"></i>
+                    <span>Purchase</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                      <li><a href={{ url('supplier/list') }}><i class="fa fa-angle-right"></i> New Purchase</a></li>
+                      <li><a href="{{ url('create/supplier') }}"><i class="fa fa-angle-right"></i>Purchase List </a></li>
+                    </ul>
+                  </li>
               <li class="treeview">
                 <a href="#">
                 <i class="fa fa-edit"></i> <span>Forms</span>

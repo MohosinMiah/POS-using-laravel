@@ -96,3 +96,33 @@ Route::get('delete/product/{id}','ProductController@destroy')->name('destroy_pro
 /**
  * Product Route End
  */
+
+
+
+/**
+ * Supplier Route Start
+ */
+
+Route::get('supplier/list','SupplierController@index')->name('supplier_index');
+
+Route::get('create/supplier','SupplierController@create');
+
+Route::post('save/supplier','SupplierController@store')->name('create_supplier');
+
+Route::get('edit/supplier/{id}','SupplierController@edit')->name('edit_supplier');
+
+Route::post('update/supplier/{id}','SupplierController@update')->name('update_supplier');
+
+Route::get('show/supplier/{id}','SupplierController@show')->name('show_supplier');
+
+Route::get('delete/supplier/{id}','SupplierController@destroy')->name('destroy_supplier');
+
+
+
+/**
+ * Supplier Route End
+ */
+
+
+
+ 
