@@ -26,14 +26,11 @@
                 <table id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Customar Name </th>
-                                <th>Product Name </th>
-                                <th>Product QTY</th>
-                                <th>Product Amount</th>
-                                <th>Phone </th>
-                                <th>Purchase Time </th>
-                                <th>Image </th>
+                                <th>Pro. ID</th>
+                                <th>Customer Name</th>
+                                <th> Product Name</th>
+                                <th>Available Quantity</th>
+                                <th>Image</th>
                                 <th>ACTION</th>
                             </tr>
                         </thead>
@@ -41,18 +38,20 @@
               <?php
 
             foreach ($purchases as $purchase) {
+
             ?>
                             <tr>
-                                <td>{{ $purchase->id  }}</td>
+                                <td>{{  $purchase->product_id }}</td>
+
                                 <td>{{ $purchase->customer_name  }}</td>
+
                                 <td>{{ $purchase->name  }}</td>
-                                <td>{{ $purchase->product_qty }}</td>
-                                <td>{{ $purchase->product_amount }}</td>
-                                <td>{{ $purchase->phone }}</td>
-                                <td>{{ $purchase->created_at }}</td>
-                                <td>
-                                    <img src="{{ url('images') }}//{{ $purchase->img }}" height="100px" width="100px" alt="">
-                                </td>
+
+                                <td>{{ $purchase->total_qty }}</td>
+
+
+
+                                <td><img src="{{ url('images') }}/{{  $purchase->img }}" width="100px" height="100px" alt=""></td>
                                 <td>
                                         <a href="{{route('edit_purchase',$purchase->id)}}" title="EDIT"><i class='glyphicon glyphicon-edit' style='font-size:24px'></i></a>
                                         <a href="{{ route('show_purchase',$purchase->id) }}" title="VIEW"><i class="glyphicon glyphicon-search" style="font-size:24px"></i> </a>
@@ -63,13 +62,12 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Type</th>
-                                <th>Note</th>
-                                <th>Created At</th>
-                                <th>Updated At</th>
-                                <th>ACTION</th>
+                            <th>Pro. ID</th>
+                            <th>Customer Name</th>
+                            <th> Product Name</th>
+                            <th>Available Quantity</th>
+                            <th>Image</th>
+                            <th>ACTION</th>
 
                             </tr>
                         </tfoot>
@@ -79,6 +77,6 @@
                 <script type="text/javascript" charset="utf8">
                 $(document).ready(function() {
                     $('#example').DataTable()
-                } )
+                } );
                 </script>
 @endsection

@@ -148,4 +148,30 @@ Route::get('delete/purchase/{id}','PurchaseController@destroy')->name('destroy_p
 
 
 
+/**
+ * Storage Route Start
+ */
+
+Route::get('store/list','StoreController@index')->name('storage_index');
+
+// Route::get('create/purchase','PurchaseController@create');
+
+// Route::post('save/purchase','PurchaseController@store')->name('create_purchase');
+
+// Route::get('edit/purchase/{id}','PurchaseController@edit')->name('edit_purchase');
+
+// Route::post('update/purchase/{id}','PurchaseController@update')->name('update_purchase');
+
+// Route::get('show/purchase/{id}','PurchaseController@show')->name('show_purchase');
+
+// Route::get('delete/purchase/{id}','PurchaseController@destroy')->name('destroy_purchase');
+
+
+
+/**
+ * Storage Route End
+ */
+
+
+
 

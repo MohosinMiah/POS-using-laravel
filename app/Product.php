@@ -8,7 +8,10 @@ class Product extends Model
 {
 
 
+    protected $table = 'products';
 
+    // Setup fields of table "category"
+    protected $fillable = ['id', 'name', 'category_id', 'price','quantity'];
 
     /**
      * Get the Supplier record associated with the Product.

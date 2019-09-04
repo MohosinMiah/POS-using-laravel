@@ -15,6 +15,7 @@ class CreateProductsTable extends Migration
     {
 
         Schema::create('products', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('category_id')->unsigned();
@@ -32,12 +33,11 @@ class CreateProductsTable extends Migration
             $table->string('method');
             $table->string('note');
             $table->timestamps();
-        });
-
-        Schema::create('products', function (Blueprint $table) {
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
         });
+
+
     }
 
     /**

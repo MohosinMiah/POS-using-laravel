@@ -16,6 +16,8 @@ class Purchase extends Model
 
 
 
+    // Setup fields of table "category"
+    protected $fillable = ['id', 'display_name', 'name', 'key'];
 
     /**
      * Get the Product record associated with the Purchase.

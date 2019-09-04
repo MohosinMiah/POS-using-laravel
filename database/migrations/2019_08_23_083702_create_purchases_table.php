@@ -14,6 +14,7 @@ class CreatePurchasesTable extends Migration
     public function up()
     {
         Schema::create('purchases', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->integer('product_id')->unsigned();
             $table->string('customer_name');
@@ -21,6 +22,7 @@ class CreatePurchasesTable extends Migration
             $table->integer('product_qty');
             $table->float('product_amount');
             $table->timestamps();
+
 
         });
     }

@@ -20,7 +20,10 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        $purchases = Purchase::all();
+        $purchases = DB::table('purchases')
+            ->join('products', 'purchases.product_id', '=', 'products.id')
+            ->select('purchases.*', 'products.*')
+            ->get();
 
         return view('pos/purchases/list',compact('purchases'));
     }
@@ -66,11 +69,33 @@ class PurchaseController extends Controller
 
         }else{
 
+            $total_qty = 0;
+
+            $check_purchase = DB::table('purchases')->select('total_qty')->where('product_id',$request['product_id'])->get();
+
+            if(count($check_purchase) > 0){
+
+                foreach($check_purchase as $check_purchas){
+                    $total_qty += $check_purchas->total_qty;
+
+                }
+            }else{
+                $total_qty = DB::table('products')->select('quantity')->where('id',$request['product_id'])->first();
+                $total_qty = $total_qty->quantity;
+            }
+
+
+
+            // var_dump($total_qty->quantity);
+            // dd();
+            // die();
+
             $purchase = new Purchase();
             $purchase->product_id= $request['product_id'];
             $purchase->customer_name= $request['customer_name'];
             $purchase->product_qty= $request['product_qty'];
             $purchase->product_amount= $request['product_amount'];
+            $purchase->total_qty= $total_qty -$purchase->product_qty ;
 
            // add other fields
             $purchase->save();

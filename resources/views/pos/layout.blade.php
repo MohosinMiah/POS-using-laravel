@@ -129,13 +129,13 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </button>
-            <h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span> Glance<span class="dashboard_text">Design dashboard</span></a></h1>
+            <h1><a class="navbar-brand" href="/"><span class="fa fa-area-chart"></span> Glance<span class="dashboard_text">Design dashboard</span></a></h1>
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="sidebar-menu">
               <li class="header">MAIN NAVIGATION</li>
               <li class="treeview">
-                <a href="index.html">
+                <a href="/">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
               </li>
@@ -181,25 +181,27 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                     <ul class="treeview-menu">
                       <li><a href={{ url('create/purchase') }}><i class="fa fa-angle-right"></i> New Purchase</a></li>
                       <li><a href="{{ url('purchase/list') }}"><i class="fa fa-angle-right"></i>Purchase List </a></li>
+                      <li><a href="{{ url('purchase/list') }}"><i class="fa fa-angle-right"></i>Advanced  Search </a></li>
+
                     </ul>
                   </li>
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-edit"></i> <span>Purchase History</span>
+                <i class="fa fa-edit"></i> <span>Store History</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i> New Purchase</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i>Advanced  Search </a></li>
+                  <li><a href="{{ url('store/list') }}"><i class="fa fa-angle-right"></i> Storage</a></li>
+                  <li><a href="forms.html"><i class="fa fa-angle-right"></i> Storage Avanced Searchd</a></li>
                 </ul>
               </li>
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-table"></i> <span>Tables</span>
+                <i class="fa fa-table"></i> <span>General Setting</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="tables.html"><i class="fa fa-angle-right"></i> Simple tables</a></li>
+                  <li><a href="tables.html"><i class="fa fa-angle-right"></i>One</a></li>
                 </ul>
               </li>
               <li class="treeview">
@@ -211,23 +213,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                   <li><a href="compose.html"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
                 </ul>
               </li>
-              <li class="treeview">
-                <a href="#">
-                <i class="fa fa-folder"></i> <span>Examples</span>
-                <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="login.html"><i class="fa fa-angle-right"></i> Login</a></li>
-                  <li><a href="signup.html"><i class="fa fa-angle-right"></i> Register</a></li>
-                  <li><a href="404.html"><i class="fa fa-angle-right"></i> 404 Error</a></li>
-                  <li><a href="500.html"><i class="fa fa-angle-right"></i> 500 Error</a></li>
-                  <li><a href="blank-page.html"><i class="fa fa-angle-right"></i> Blank Page</a></li>
-                </ul>
-              </li>
-              <li class="header">LABELS</li>
-              <li><a href="#"><i class="fa fa-angle-right text-red"></i> <span>Important</span></a></li>
-              <li><a href="#"><i class="fa fa-angle-right text-yellow"></i> <span>Warning</span></a></li>
-              <li><a href="#"><i class="fa fa-angle-right text-aqua"></i> <span>Information</span></a></li>
+
             </ul>
           </div>
           <!-- /.navbar-collapse -->
