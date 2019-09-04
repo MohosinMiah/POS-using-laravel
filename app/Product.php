@@ -34,6 +34,14 @@ class Product extends Model
      }
 
 
+      /**
+     * Get the supplier that owns the Product.
+     */
+    public function purchase()
+    {
+        return $this->belongsTo('App\Purchase');
+
+    }
 
 
 

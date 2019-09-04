@@ -179,18 +179,18 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
                     <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
-                      <li><a href={{ url('supplier/list') }}><i class="fa fa-angle-right"></i> New Purchase</a></li>
-                      <li><a href="{{ url('create/supplier') }}"><i class="fa fa-angle-right"></i>Purchase List </a></li>
+                      <li><a href={{ url('create/purchase') }}><i class="fa fa-angle-right"></i> New Purchase</a></li>
+                      <li><a href="{{ url('purchase/list') }}"><i class="fa fa-angle-right"></i>Purchase List </a></li>
                     </ul>
                   </li>
               <li class="treeview">
                 <a href="#">
-                <i class="fa fa-edit"></i> <span>Forms</span>
+                <i class="fa fa-edit"></i> <span>Purchase History</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                  <li><a href="forms.html"><i class="fa fa-angle-right"></i> General Forms</a></li>
-                  <li><a href="validation.html"><i class="fa fa-angle-right"></i> Form Validations</a></li>
+                  <li><a href="forms.html"><i class="fa fa-angle-right"></i> New Purchase</a></li>
+                  <li><a href="validation.html"><i class="fa fa-angle-right"></i>Advanced  Search </a></li>
                 </ul>
               </li>
               <li class="treeview">

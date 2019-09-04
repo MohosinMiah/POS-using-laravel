@@ -117,12 +117,35 @@ Route::get('show/supplier/{id}','SupplierController@show')->name('show_supplier'
 
 Route::get('delete/supplier/{id}','SupplierController@destroy')->name('destroy_supplier');
 
-
-
 /**
  * Supplier Route End
  */
 
 
+/**
+ * purchase Route Start
+ */
 
- 
+Route::get('purchase/list','PurchaseController@index')->name('supplier_index');
+
+Route::get('create/purchase','PurchaseController@create');
+
+Route::post('save/purchase','PurchaseController@store')->name('create_purchase');
+
+Route::get('edit/purchase/{id}','PurchaseController@edit')->name('edit_purchase');
+
+Route::post('update/purchase/{id}','PurchaseController@update')->name('update_purchase');
+
+Route::get('show/purchase/{id}','PurchaseController@show')->name('show_purchase');
+
+Route::get('delete/purchase/{id}','PurchaseController@destroy')->name('destroy_purchase');
+
+
+
+/**
+ * purchase Route End
+ */
+
+
+
+
